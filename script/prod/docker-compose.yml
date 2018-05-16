@@ -1,0 +1,60 @@
+version: '2'
+
+services:
+  react-app:
+    build: ../../react-app
+    command: npm run build && cp build/* /react-app/
+#    environment:
+#      - PORT=80
+    expose:
+      - 3001
+    volumes:
+      - ../../react-app:/react-app
+      - frontend-dependencies:/react-app/node_modules
+
+  proxy:
+    image: nginx:1.13.9-alpine
+    restart: always
+    volumes:
+      - ./nginx-confd:/etc/nginx/conf.d:z
+      - ../../react-app:/usr/share/nginx/html
+    links:
+      - mongodb
+    ports:
+      - "3001:80"
+
+  mongodb:
+      image: mongo:3.6.3-jessie
+      environment:
+        - MONGO_INITDB_DATABASE=prod
+        - MONGO_INITDB_ROOT_USERNAME=prod
+        - MONGO_INITDB_ROOT_PASSWORD=prod
+      volumes:
+        - ./mongo-initdb:/docker-entrypoint-initdb.d:z
+      ports:
+        - "27017:27017"
+
+  express-app:
+    build: ../../express-app
+    command: yarn run nodemon
+    environment:
+      - MONGO_DB_DATABASE=prod
+      - MONGO_DB_USERNAME=prod
+      - MONGO_DB_PASSWORD=prod
+    expose:
+      - 3000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../../express-app:/express-app
+      - backend-dependencies:/express-app/node_modules
+    depends_on:
+      - mongodb
+    links:
+      - mongodb
+    restart: always
+
+#node_modules volumes to avoid architecture issues
+volumes:
+  backend-dependencies:
+  frontend-dependencies:

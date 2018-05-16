@@ -1,0 +1,49 @@
+version: '2'
+
+services:
+  react-app:
+    build: ../../react-app
+    command: "yarn start"
+#    environment:
+#      - PORT=80
+    volumes:
+      - ../../react-app:/react-app
+      - frontend-dependencies:/react-app/node_modules
+    ports:
+     - "3001:3000"
+
+  mongodb:
+      image: mongo:3.6.3-jessie
+      environment:
+        - MONGO_INITDB_DATABASE=testDb
+        - MONGO_INITDB_ROOT_USERNAME=test
+        - MONGO_INITDB_ROOT_PASSWORD=test
+      volumes:
+        - ./mongo-initdb:/docker-entrypoint-initdb.d:z
+      ports:
+        - "27017:27017"
+
+  express-app:
+    build: ../../express-app
+    command: yarn run nodemon
+    environment:
+      - MONGO_DB_DATABASE=testDb
+      - MONGO_DB_USERNAME=test
+      - MONGO_DB_PASSWORD=test
+    expose:
+      - 3000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../../express-app:/express-app
+      - backend-dependencies:/express-app/node_modules
+    depends_on:
+      - mongodb
+    links:
+      - mongodb
+    restart: always
+
+#node_modules volumes to avoid architecture issues
+volumes:
+  backend-dependencies:
+  frontend-dependencies:
