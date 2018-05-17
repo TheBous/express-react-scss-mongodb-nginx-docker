@@ -1,4 +1,4 @@
-# Boilerplate multistaging(dev-prod) with docker :whale: ReactJS, ExpressJS and mongoDB
+# Boilerplate multistaging(dev-prod) with docker :whale: ReactJS :beginner:, ExpressJS :sparkler: and mongoDB :leaves:
 
 
 
