@@ -1,5 +1,5 @@
 # Boilerplate multistaging(dev-prod) with docker :whale: ReactJS, ExpressJS and mongoDB
-> Short blurb about what your product does.
+
 
 
 Scaffolding app to create a project with ReactJS, expressJS and Mongodb as persistence. 
