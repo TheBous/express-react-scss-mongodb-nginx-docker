@@ -1,0 +1,48 @@
+//global parent variable
+:root {
+  --color-gold:#E6B980;
+  --color-blue:#406481;
+  --color-grey-dark:#656565;
+  --color-grey-light:#7b7b7b;
+  --color-white:#ffffff;
+
+  --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
+  --shadow-light: 0 2rem 6rem rgba(0,0,0,.1);
+  --line : 1px solid var(--color-grey-light);
+}
+// per le media query le variabili vanno dichiarate come sass e in rem (1200px/16px=75em)
+$bp-largest: 75em; //1200px
+$bp-large: 68.75em; //1100px
+$bp-medium: 56.25em; //900px
+$bp-small: 37.5em; //600px
+$bp-smallest: 31.25em; //500px
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; //1 rem = 10px; 10px/16px(browser default)=62.5%
+
+  @media only screen and (max-width:$bp-large) {
+    font-size:50%;
+  }
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color:var(--color-grey-dark);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}

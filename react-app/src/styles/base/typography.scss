@@ -1,0 +1,62 @@
+.Header {
+  &__list {
+    font-weight: 500;
+    line-height: 1.8rem;
+    font-size: 1.4rem;
+  }
+}
+
+.Clock {
+  &--number {
+    font-size: 4rem;
+    line-height: 5.5rem;
+  }
+
+  &--text {
+    font-size: .8rem;
+    line-height: 1rem;
+  }
+}
+
+.IntroducingABCPlatform {
+  &__more {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+}
+
+.IntroducingABCPlatformContainerLeft {
+  &__resume {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+
+  &__advantages {
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+    font-weight: 300;
+
+    &__list {
+      font-size: 1.8rem;
+      line-height: 2.2rem;
+    }
+  }
+}
+
+.Features {
+  font-size: 2.4rem;
+  line-height: 2.9rem;
+  font-weight: 300;
+}
+
+.FeatureItem {
+  line-height: 1.8rem;
+  font-size: 1.4rem;
+  &__label {
+    font-weight: 500;
+  }
+  
+  &__text {
+    
+  }
+}

@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,bold,italic&subset=latin,latin-ext");
+:root {
+  --color-gold:#E6B980;
+  --color-blue:#406481;
+  --color-grey-dark:#656565;
+  --color-grey-light:#7b7b7b;
+  --color-white:#ffffff;
+  --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
+  --shadow-light: 0 2rem 6rem rgba(0,0,0,.1);
+  --line: 1px solid var(--color-grey-light); }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+  @media only screen and (max-width: 68.75em) {
+    html {
+      font-size: 50%; } }
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: var(--color-grey-dark);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; }
+
+.Header__list {
+  font-weight: 500;
+  line-height: 1.8rem;
+  font-size: 1.4rem; }
+
+.Clock--number {
+  font-size: 4rem;
+  line-height: 5.5rem; }
+
+.Clock--text {
+  font-size: .8rem;
+  line-height: 1rem; }
+
+.IntroducingABCPlatform__more {
+  font-size: 1.8rem;
+  line-height: 2.2rem; }
+
+.IntroducingABCPlatformContainerLeft__resume {
+  font-size: 1.8rem;
+  line-height: 2.2rem; }
+
+.IntroducingABCPlatformContainerLeft__advantages {
+  font-size: 2.4rem;
+  line-height: 2.9rem;
+  font-weight: 300; }
+  .IntroducingABCPlatformContainerLeft__advantages__list {
+    font-size: 1.8rem;
+    line-height: 2.2rem; }
+
+.Features {
+  font-size: 2.4rem;
+  line-height: 2.9rem;
+  font-weight: 300; }
+
+.FeatureItem {
+  line-height: 1.8rem;
+  font-size: 1.4rem; }
+  .FeatureItem__label {
+    font-weight: 500; }
+
+.container {
+  background-color: lightgrey;
+  margin: 0 auto; }
