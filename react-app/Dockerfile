@@ -5,7 +5,7 @@ ENV NPM_CONFIG_LOGLEVEL warn
 WORKDIR /react-app/
 
 RUN yarn
-#RUN yarn global add serve
+#RUN yarn global add npm-run-all
 
 COPY . .
 

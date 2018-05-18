@@ -8,7 +8,7 @@ services:
 #      - PORT=80
     volumes:
       - ../../react-app:/react-app
-      - frontend-dependencies:/react-app/node_modules
+ #     - frontend-dependencies:/react-app/node_modules
     ports:
      - "3001:3000"
 
@@ -36,7 +36,7 @@ services:
       - "3000:3000"
     volumes:
       - ../../express-app:/express-app
-      - backend-dependencies:/express-app/node_modules
+#      - backend-dependencies:/express-app/node_modules
     depends_on:
       - mongodb
     links:
@@ -44,6 +44,6 @@ services:
     restart: always
 
 #node_modules volumes to avoid architecture issues
-volumes:
-  backend-dependencies:
-  frontend-dependencies:
+#volumes:
+#  backend-dependencies:
+#  frontend-dependencies:

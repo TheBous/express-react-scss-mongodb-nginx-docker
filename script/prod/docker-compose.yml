@@ -3,7 +3,7 @@ version: '2'
 services:
   react-app:
     build: ../../react-app
-    command: "yarn build && cp /build/* /react-app/"
+    command: "bash -c yarn build cp /build/* /react-app/"
     volumes:
       - ../../react-app:/react-app
       - frontend-dependencies:/react-app/node_modules

@@ -8,6 +8,7 @@ class App extends Component {
         return (
             <div>
                 <FirstComponent/>
+                <h1>change</h1>
             </div>
         );
     }
