@@ -9,7 +9,8 @@ RUN yarn
 
 COPY . .
 
-#ARG PORT
-#ENV PORT ${PORT}
+#specify directly which port do u use
+ARG PORT
+ENV PORT ${PORT}
 
 CMD ["yarn", "start"]

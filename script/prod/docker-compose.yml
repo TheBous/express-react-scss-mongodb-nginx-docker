@@ -3,23 +3,21 @@ version: '2'
 services:
   react-app:
     build: ../../react-app
-    command: npm run build && cp build/* /react-app/
-#    environment:
-#      - PORT=80
-    expose:
-      - 3001
+    command: "yarn build && cp /build/* /react-app/"
     volumes:
       - ../../react-app:/react-app
       - frontend-dependencies:/react-app/node_modules
-
   proxy:
     image: nginx:1.13.9-alpine
     restart: always
     volumes:
       - ./nginx-confd:/etc/nginx/conf.d:z
-      - ../../react-app:/usr/share/nginx/html
+      - ../../react-app/build:/usr/share/nginx/html
+    depends_on:
+      - react-app
     links:
       - mongodb
+      - react-app
     ports:
       - "3001:80"
 
