@@ -16,15 +16,15 @@ I enabled hot live reload both in the Express and in the React Part
 To run React, Express and Mongo in one shot run in dev mode:
 
 ```sh
-chmod +x run ./run-dev.sh 
-./run.dev.sh
+chmod +x ./run-dev.sh 
+./run-dev.sh
 ```
 
 and in prod: 
 
 ```sh
-chmod +x run ./run-prod.sh 
-./run.prod.sh
+chmod +x ./run-prod.sh 
+./run-prod.sh
 ```
 
 ## Usage example
